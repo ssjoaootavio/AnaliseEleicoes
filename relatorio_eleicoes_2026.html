@@ -229,25 +229,28 @@ canvas{max-width:100%;display:block;border-bottom:1px solid var(--line);border-l
 <!-- ================= P4 HORARIO ================= -->
 <section id="horario">
   <div class="head"><div class="eyebrow">P4 · Prorrogação do horário de votação</div><h2>Dá para medir os votos dados depois das 17h?</h2><div class="tags"><span class="tag nc">Não conclusivo</span></div></div>
-  <p>Com os dados abertos atuais, não. O único horário disponível por seção é o da <b>chegada do boletim de urna ao TSE</b>, que não é o horário de fechamento da seção nem de cada voto.</p>
+  <p><b>Com o boletim de urna, não dá para analisar.</b> O único horário que ele traz por seção é o da <b>chegada do boletim ao TSE</b>, que não é o horário de fechamento da seção nem de cada voto. Por isso o gráfico abaixo não responde à pergunta.</p>
+  <p class="callout"><b>Estamos trabalhando nessa análise</b> com outra fonte: os logs das urnas (pacote “Arquivos transmitidos para totalização”), que registram a hora de cada voto computado, sem dizer em quem foi. Até agora só foram processados os logs de RR no 1º turno. Os logs do 2º turno, quando houve a prorrogação, ainda não foram publicados pelo TSE.</p>
   <div class="tiles" id="p4-tiles"></div>
   <div class="fig"><h3>Seções por horário de recebimento do boletim, 1º turno</h3>
     <div class="sub">Faixas de 30 minutos, hora do TSE, em 04/10. A linha marca 19h. O vazio perto das 19h30 é compatível com uma pausa de recebimento; isso é <span class="tag hip">hipótese</span>, não confirmada por fonte oficial.</div>
     <div class="chart" id="ch-p4"></div><div id="tv-p4"></div></div>
-  <p class="callout warn">Para responder, seria preciso uma fonte com horário de abertura e encerramento de cada urna (por exemplo, os registros por urna do pacote “Arquivos transmitidos para totalização”). Isso ainda não foi confirmado.</p>
+  <p class="callout warn">Enquanto os logs de urna do 2º turno não forem publicados e processados, esta pergunta segue <b>não conclusiva</b>.</p>
 </section>
 
 <!-- ================= FONTES ================= -->
 <section id="fontes">
-  <div class="head"><div class="eyebrow">Procedência</div><h2>Fontes, como refazer e o que ainda falta</h2></div>
+  <div class="head"><div class="eyebrow">Procedência</div><h2>Fontes e o que ainda falta</h2></div>
   <div class="cols2">
     <div><h3>De onde vêm os números</h3><ul class="tight" id="src-list"></ul></div>
-    <div><h3>Como refazer</h3>
-      <div class="cmd"><code>python coleta_resultados_json.py --turnos 1 2 --saida saida_json --comparar-csv saida_v2</code><button data-copy>Copiar</button></div>
-      <div class="cmd"><code>python analisa_votos_tse_v2_2.py votacao_secao_2026_BR.csv --detalhe detalhe_votacao_secao_2026\detalhe_votacao_secao_2026_BR.csv --excluir-candidatos 28 --saida saida_v2</code><button data-copy>Copiar</button></div>
-      <div class="cmd"><code>python migracao_1t_2t.py --entrada saida_json\json_p2_municipios_por_turno.csv --saida saida_p3</code><button data-copy>Copiar</button></div>
-      <div class="cmd"><code>python migracao_1t_2t.py --validar-simulacao --saida saida_p3</code><button data-copy>Copiar</button></div>
-    </div>
+    <div><h3>Links das fontes</h3><ul class="tight">
+      <li><a href="https://dadosabertos.tse.jus.br/dataset/resultados-2026" target="_blank" rel="noopener">TSE · Dados abertos · Resultados – 2026</a> (votação por seção e detalhe por seção)</li>
+      <li><a href="https://dadosabertos.tse.jus.br/dataset/resultados-2026-arquivos-transmitidos-para-totalizacao" target="_blank" rel="noopener">TSE · Dados abertos · Arquivos transmitidos para totalização</a> (logs de urna, usados no P4)</li>
+      <li><a href="https://dadosabertos.tse.jus.br/dataset/resultados-2026-boletim-de-urna" target="_blank" rel="noopener">TSE · Dados abertos · Boletim de Urna</a></li>
+      <li><a href="https://resultados.tse.jus.br/oficial/app/index.html" target="_blank" rel="noopener">TSE · Painel de resultados</a> (fonte dos arquivos JSON por Brasil, UF e município)</li>
+      <li><a href="https://dadosabertos.tse.jus.br" target="_blank" rel="noopener">TSE · Portal de dados abertos</a></li>
+      <li><a href="https://github.com/ssjoaootavio/AnaliseEleicoes" target="_blank" rel="noopener">Código e tabelas desta análise (GitHub)</a></li>
+    </ul></div>
   </div>
   <div class="cols2" style="margin-top:28px">
     <div><h3>Limites conhecidos</h3><ul class="tight">
@@ -259,7 +262,7 @@ canvas{max-width:100%;display:block;border-bottom:1px solid var(--line);border-l
     </ul></div>
     <div><h3>Pendências</h3><ul class="tight">
       <li>Os CSVs oficiais do 2º turno (votação por seção) ainda não foram publicados nos dados abertos. Quando saírem, a análise por seção repete o método com 499.248 unidades e deve identificar melhor a migração.</li>
-      <li>P4 depende de uma fonte com horário por urna.</li>
+      <li>P4: análise em andamento com os logs de urna; faltam as demais UFs e os logs do 2º turno.</li>
       <li>Decisões de escopo em aberto: formato final, público ou pessoal, granularidade do P3.</li>
     </ul></div>
   </div>

@@ -8,3 +8,6 @@ saida_json/cache_bruto/
 __pycache__/
 *.pyc
 .venv/
+
+# Configuração local do Claude
+.claude/
