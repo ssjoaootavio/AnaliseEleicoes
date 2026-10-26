@@ -1,0 +1,10 @@
+# Dados brutos do TSE (grandes; baixar do portal de dados abertos)
+votacao_secao_2026_*.csv
+detalhe_votacao_secao_2026/
+bu_imgbu_logjez_rdv_vscmr_*.zip
+saida_json/cache_bruto/
+
+# Python
+__pycache__/
+*.pyc
+.venv/

@@ -1,0 +1,21 @@
+{
+  "versao": "0.1",
+  "pacote": "bu_imgbu_logjez_rdv_vscmr_2026_1t_RR.zip",
+  "dia": "04/10/2026",
+  "logs_lidos": 1519,
+  "erros": [],
+  "n_erros": 0,
+  "votos_computados": 332730,
+  "habilitados": 333011,
+  "secoes_sem_voto_no_dia": 0,
+  "secoes_sem_encerramento_registrado": 0,
+  "secoes_csv": 1519,
+  "secoes_so_no_csv": 0,
+  "secoes_so_nos_logs": 0,
+  "secoes_comparadas": 1519,
+  "secoes_com_diferenca": 3,
+  "soma_comparecimento_csv": 332772,
+  "soma_votos_logs": 332730,
+  "diferenca_total": -42,
+  "diferenca_abs_max": 24
+}

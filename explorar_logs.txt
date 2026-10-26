@@ -1,0 +1,204 @@
+Explorador de logs de urna v0.1 | Python 3.12.4 | 26/10/2026 12:50:01
+Pacote: bu_imgbu_logjez_rdv_vscmr_2026_1t_RR.zip (260,658,618 bytes)
+Arquivos dentro do pacote: 7,596
+Por extensao (quantidade, tamanho descompactado):
+  .dat                4,557        66,385,011 bytes
+  .vsc                1,519        95,098,323 bytes
+  .jez                1,519       135,377,221 bytes
+  .pdf                    1           310,546 bytes
+Exemplos de nomes:
+  leiame.pdf
+  o03220rr0305000030241-bu.dat
+  o03220rr0305000030241-rdv.dat
+  o03220rr0305000030241-vota.vsc
+  o03220rr0305000030241-log.jez
+  o03220rr0305000030013-log.jez
+  o03220rr0305000030013-bu.dat
+  o03220rr0305000030013-rdv.dat
+
+Arquivos tratados como log (.logjez, .jez, .log): 1,519
+
+--- Primeiro log da amostra: o03220rr0305000030241-log.jez -> logd.dat (4,390 linhas) ---
+Arquivos internos: logd.dat (424,771 B)
+Primeiras linhas (campos separados por | ):
+  22/09/2026 09:13:22 | INFO | 02297435 | LOGD | Início das operações do logd | 6BB1250D7F4879D9
+  22/09/2026 09:13:22 | INFO | 02297435 | LOGD | Urna ligada em 22/09/2026 às 09:12:28 | 21375D7C444134E4
+  22/09/2026 09:13:22 | INFO | 02297435 | SCUE | Iniciando aplicação - 1º turno | A279C5A63690DFFA
+  22/09/2026 09:13:22 | INFO | 02297435 | SCUE | Versão da aplicação: 10.23.0.0 - Praia da Barra do Cahy | BAB7AEEB82A2003A
+  22/09/2026 09:13:24 | INFO | 02297435 | SCUE | Urna operando com rede elétrica | E6D389FBEF0FB07B
+  22/09/2026 09:13:24 | INFO | 02297435 | SCUE | Bateria interna com carga plena | 0A3946D468D85F45
+  22/09/2026 09:13:30 | INFO | 02297435 | SCUE | Tamanho da mídia interna: 3.7 GB | CF94C486CF910758
+  22/09/2026 09:13:33 | INFO | 02297435 | SCUE | Tamanho da memória: 3.7 GB | BEE92B328D176493
+  22/09/2026 09:13:34 | INFO | 02297435 | SCUE | Verificação de assinatura de aplicação por etapa [1] - [Pacote: /bin/a | 72F291844DDACF84
+  22/09/2026 09:13:34 | INFO | 02297435 | SCUE | Verificação de assinatura de aplicação por etapa [2] - [Pacote: /uenux | F5079A69B18154E3
+  22/09/2026 09:13:35 | INFO | 02297435 | SCUE | Verificação de assinatura de aplicação por etapa [3] - [Pacote: /uenux | 266F624CBD5C661C
+  22/09/2026 09:13:35 | INFO | 02297435 | SCUE | Verificação de assinatura de aplicação por etapa [4] - [Pacote: /uenux | AD7A4722742EC50D
+  22/09/2026 09:13:36 | INFO | 02297435 | SCUE | Verificação de assinatura de aplicação por etapa [5] - [Pacote: /boot/ | A5123F84585E9F13
+  22/09/2026 09:13:36 | INFO | 02297435 | SCUE | Verificação de assinatura de aplicação por etapa [6] - [Pacote: /boot/ | AF19948617FFB916
+  22/09/2026 09:13:37 | INFO | 02297435 | SCUE | Verificação de assinatura de aplicação por etapa [7] - [Pacote: /lib/a | 9DC96877D58F20C1
+  22/09/2026 09:13:37 | INFO | 02297435 | SCUE | Verificação de assinatura de aplicação por etapa [8] - [Pacote: /lib/m | D9583084596D1536
+  22/09/2026 09:13:37 | INFO | 02297435 | SCUE | Verificação de assinatura de aplicação por etapa [9] - [Pacote: /lib/m | A6B359E9CEBC1459
+  22/09/2026 09:13:37 | INFO | 02297435 | SCUE | Verificação de assinatura de aplicação por etapa [10] - [Pacote: /lib/ | FD86617F39F53DB7
+  22/09/2026 09:13:37 | INFO | 02297435 | SCUE | Verificação de assinatura de aplicação por etapa [11] - [Pacote: /lib/ | 4F9DD3FDE5143E91
+  22/09/2026 09:13:38 | INFO | 02297435 | SCUE | Verificação de assinatura de aplicação por etapa [12] - [Pacote: /lib/ | 9468A250242E6F72
+  22/09/2026 09:13:38 | INFO | 02297435 | SCUE | Verificação de assinatura de aplicação por etapa [13] - [Pacote: /uenu | 82AE9D100B01BE12
+  22/09/2026 09:13:38 | INFO | 02297435 | SCUE | Verificação de assinatura de aplicação por etapa [14] - [Pacote: /uenu | 047D2020FB496B9C
+  22/09/2026 09:13:38 | INFO | 02297435 | SCUE | Verificação de assinatura de aplicação por etapa [15] - [Pacote: /uenu | 0190CE4DABFA49CE
+  22/09/2026 09:13:39 | INFO | 02297435 | SCUE | Verificação de assinatura de aplicação por etapa [16] - [Pacote: /uenu | 55425CC4A15CB714
+  22/09/2026 09:13:40 | INFO | 02297435 | SCUE | Verificação de assinatura de aplicação por etapa [17] - [Pacote: /uenu | 38390BB69774D51E
+Ultimas linhas:
+  04/10/2026 16:08:55 | INFO | 02297435 | VOTA | Gerando arquivo de resultado [imgbu.dat] + [Início] | B9BA967F2C727E79
+  04/10/2026 16:08:55 | INFO | 02297435 | VOTA | Gerando arquivo de resultado [imgbu.dat] + [Término] | D527DF62C83E47C3
+  04/10/2026 16:08:55 | INFO | 02297435 | VOTA | Gerando arquivo de resultado [imgze.dat] + [Início] | C026519FDAF72CED
+  04/10/2026 16:08:55 | INFO | 02297435 | VOTA | Gerando arquivo de resultado [imgze.dat] + [Término] | EC841DA50C7B32D7
+  04/10/2026 16:08:55 | INFO | 02297435 | VOTA | Gerando arquivo de resultado [hash.dat] + [Início] | C0CEDD6D6B2D2804
+  04/10/2026 16:08:59 | INFO | 02297435 | VOTA | Gerando arquivo de resultado [hash.dat] + [Término] | 6441FB381AC0A426
+  04/10/2026 16:08:59 | INFO | 02297435 | VOTA | Gerando arquivo de resultado [wsqbio.jez] + [Início] | 767740F90321D66F
+  04/10/2026 16:08:59 | INFO | 02297435 | VOTA | Gerando arquivo de resultado [wsqbio.jez] + [Término] | F5E0FD244617803B
+  04/10/2026 16:08:59 | INFO | 02297435 | VOTA | Gerando arquivo de resultado [wsqman.jez] + [Início] | 95C84EEB0182D816
+  04/10/2026 16:08:59 | INFO | 02297435 | VOTA | Gerando arquivo de resultado [wsqman.jez] + [Término] | C93C2D353D795C9D
+  04/10/2026 16:08:59 | INFO | 02297435 | VOTA | Gerando arquivo de resultado [wsqmes.jez] + [Início] | 1A310482ADBFA816
+  04/10/2026 16:08:59 | INFO | 02297435 | VOTA | Gerando arquivo de resultado [wsqmes.jez] + [Término] | 3F9F0C7C7BFAD1F6
+  04/10/2026 16:08:59 | INFO | 02297435 | VOTA | Gerando arquivo de resultado [mr.ver] + [Início] | 45748D17BDBCD371
+  04/10/2026 16:08:59 | INFO | 02297435 | VOTA | Gerando arquivo de resultado [mr.ver] + [Término] | D0E6CC899C5B7003
+  04/10/2026 16:08:59 | INFO | 02297435 | VOTA | Gerando arquivo de resultado [log.jez] + [Início] | 4B581E1221B3960A
+
+--- Mensagens mais frequentes na amostra (20 logs) ---
+     9,157  Tecla indevida pressionada
+     8,858  Voto confirmado para [Senador]
+     5,884  Solicita digital. Tentativa [#] de [#]
+     5,827  Capturada a digital. Tentativa [#] de [#]
+     4,894  Aguardando digitação do identificador do eleitor
+     4,705  Identificador do eleitor digitado pelo mesário
+     4,435  Eleitor foi habilitado
+     4,429  Voto confirmado para [Deputado Federal]
+     4,429  Voto confirmado para [Deputado Estadual]
+     4,429  O voto do eleitor foi computado
+     4,427  Voto confirmado para [Governador]
+     4,426  Voto confirmado para [Presidente]
+     4,202  Foto do eleitor apresentada
+     4,089  Tipo de habilitação do eleitor [biométrica]
+     3,491  Identificador digitado pelo mesário foi: (Título de eleitor)
+     1,738  Número de tentativas de reconhecimento do dedo. Tentativa [#] de [#]
+     1,044  Identificador digitado pelo mesário foi: (CPF)
+       584  Eleitor corrigiu na tela de confirmação de candidato
+       455  Tecla pressionada: #
+       435  Espaço livre na MI [#.# GB]
+       435  Espaço livre na MV [#.# MB]
+       435  Quantidade de memória total [#.# GB]
+       435  Quantidade de memória livre [#.# GB]
+       435  Quantidade de memória usada [#.# MB]
+       389  Urna ligada conectada na rede CA em [#.#V] e na Bateria Interna com [#.#V/#A]
+       370  Espaço utilizado na MI [#.# MB]
+       369  Espaço utilizado na MV [#.# MB]
+       322  Batimento de digitais retornou o score #
+       292  Verificação de assinatura - Etapa [#] - [/uenux/bin/avpart#.vst] - [SUCESSO]
+       211  Biometria coletada não é do mesário <hex> (#)
+       195  Ano de nascimento digitado é igual ao do cadastro
+       186  Identificação do Modelo de Urna: UE#
+       183  Eleitor sem atividade por # segundos
+       176  Operador confirmou o registro de mesários
+       165  Iniciando aplicação - #º turno
+       165  Versão da aplicação: #.#.#.# - Praia da Barra do Cahy
+       154  Solicita digital do mesário
+       153  Pedido de leitura da biometria do mesário <hex>
+       153  Solicitação de dado pessoal do eleitor para habilitação manual
+       152  Dado digitado confere
+       148  Mesário <hex> registrado
+       148  Operador indagado se continua registrando mesários
+       147  Identificador do eleitor digitado inválido
+       146  Verificação de assinatura - Etapa [#] - [/uenux/bin/avusrbin.vst] - [SUCESSO]
+       146  Verificação de assinatura - Etapa [#] - [/dsk/fi/estatico/o#rr-ste.vsc] - [SUCESSO]
+       146  Verificação de assinatura - Etapa [#] - [/dsk/fi/estatico/o#rr-ce.vsc] - [SUCESSO]
+       142  Finalização de aplicativo
+       133  Eleitor voltou a digitar enquanto estava sendo suspenso
+       132  Mesário <hex> habilitou o eleitor
+       132  Inspeção da urna iniciada
+       132  Inspeção da urna confirmada
+       132  Inspeção da urna terminada
+       101  Início de impressão
+       101  Fim de impressão
+       101  Mesário <hex> não é eleitor da seção
+       100  Verificação de assinatura de aplicação por etapa [#] - [Pacote: /uenux/lib/avusrlibue#.vst] - [SUCESSO]
+       100  Verificação de assinatura de aplicação por etapa [#] - [Pacote: /lib/modules/ue#/avmodue#.vst] - [SUCESSO]
+        97  Biometria do mesário <hex> encontrada nos arquivos coletados (#)
+        93  Detectada impressora com serial #
+        93  Município: #
+
+--- Mensagens que falam de VOTO ---
+     8,858  Voto confirmado para [Senador]
+     4,429  Voto confirmado para [Deputado Federal]
+     4,429  Voto confirmado para [Deputado Estadual]
+     4,429  O voto do eleitor foi computado
+     4,427  Voto confirmado para [Governador]
+     4,426  Voto confirmado para [Presidente]
+        20  Urna pronta para receber votos
+         6  Eleitor foi suspenso e não confirmou nenhum voto
+         3  Atribuido voto nulo por suspensão [Presidente]
+         3  Eleitor votou parcialmente e em seguida foi suspenso
+         2  O eleitor identificado já votou
+         2  Atribuido voto nulo por suspensão [Governador]
+
+--- Mensagens de habilitacao, inicio, encerramento, zeresima ---
+     4,435  Eleitor foi habilitado
+     4,089  Tipo de habilitação do eleitor [biométrica]
+       165  Iniciando aplicação - #º turno
+       153  Solicitação de dado pessoal do eleitor para habilitação manual
+       132  Mesário <hex> habilitou o eleitor
+       132  Inspeção da urna iniciada
+       101  Fim de impressão
+        72  Iniciando aplicação - ELEIÇÃO OFICIAL PRIMEIRO TURNO - #º turno
+        53  Iniciando registro do log na MI e na ME
+        49  Fechando o arquivo de Log
+        48  Operador encerrou ciclo de registro de mesários
+        30  Habilitação cancelada durante confirmação de dado do eleitor
+        26  Fim do teste de Teclado do TE - Sucesso
+        22  Aguardando data e hora para emissão da zerésima
+        22  Operador selecionou: Encerrar votação
+        21  Fim do teste CPU - SUCESSO
+        21  Fim do teste Memória - SUCESSO
+        21  Fim do teste Firmware - SUCESSO
+        21  Fim do teste Mídia Interna - SUCESSO
+        21  Fim do teste Mídia Externa - SUCESSO
+        21  Fim do teste Mídia de Resultado - SUCESSO
+        21  Fim do teste MSE - SUCESSO
+        21  Fim do teste Comunicação TE - SUCESSO
+        21  Fim do teste Vídeo - SUCESSO
+        21  Fim do teste Teclado do TE - SUCESSO
+        21  Fim do teste Alto-falante - SUCESSO
+        21  Fim do teste Áudio - SUCESSO
+        21  Fim do teste Sensor da Fonte - SUCESSO
+        21  Fim do teste Sensor da Chave - SUCESSO
+        21  Fim do teste Teclado TM - SUCESSO
+        21  Fim do teste Led TM - SUCESSO
+        21  Fim do teste Bipe TM - SUCESSO
+        21  Fim do teste LCD TM - SUCESSO
+        21  Fim do teste Biometria Firmware - SUCESSO
+        21  Fim do teste Impressora - SUCESSO
+        20  Iniciando cópia de Log da ME para MI
+        20  Fim do teste Biometria - SUCESSO
+        20  Aguardando confirmação para emissão da zerésima
+        20  Gerando relatório [ZERÉSIMA] [INÍCIO]
+        20  Gerando relatório [ZERÉSIMA] [TÉRMINO]
+
+--- Intervalo de horarios por log (primeiro e ultimo evento) ---
+  o03220rr0305000030241-log.jez                      4,390 linhas  22/09/2026 09:13:22  ->  04/10/2026 16:08:59
+  o03220rr0303400020104-log.jez                      5,168 linhas  22/09/2026 08:57:03  ->  04/10/2026 16:08:52
+  o03220rr0311500090062-log.jez                      5,106 linhas  23/09/2026 08:58:12  ->  04/10/2026 16:09:54
+  o03220rr0307700090025-log.jez                      4,705 linhas  23/09/2026 08:28:16  ->  04/10/2026 16:07:23
+  o03220rr0308500080082-log.jez                      4,783 linhas  23/09/2026 09:05:16  ->  04/10/2026 16:16:42
+  o03220rr0306900050607-log.jez                      3,356 linhas  23/09/2026 09:39:01  ->  04/10/2026 16:06:01
+  o03220rr0309300060022-log.jez                      5,450 linhas  03/10/2026 08:54:41  ->  04/10/2026 16:21:14
+  o03220rr0301800010784-log.jez                      5,182 linhas  24/09/2026 08:17:09  ->  04/10/2026 16:08:43
+  o03220rr0301800010458-log.jez                      5,137 linhas  24/09/2026 08:34:19  ->  04/10/2026 16:04:22
+  o03220rr0301800010650-log.jez                      5,722 linhas  24/09/2026 08:41:29  ->  04/10/2026 16:04:33
+  o03220rr0301800010529-log.jez                      3,456 linhas  24/09/2026 08:34:33  ->  04/10/2026 16:13:20
+  o03220rr0301800010231-log.jez                      4,699 linhas  24/09/2026 08:51:10  ->  04/10/2026 16:05:35
+  o03220rr0301800010781-log.jez                      4,010 linhas  24/09/2026 08:07:04  ->  04/10/2026 16:08:44
+  o03220rr0301800010210-log.jez                      4,641 linhas  24/09/2026 08:11:31  ->  04/10/2026 16:06:37
+  o03220rr0301800050702-log.jez                      5,150 linhas  25/09/2026 08:20:13  ->  04/10/2026 16:08:09
+  o03220rr0301800050327-log.jez                      5,786 linhas  25/09/2026 08:43:32  ->  04/10/2026 16:14:40
+  o03220rr0301800050008-log.jez                      5,458 linhas  25/09/2026 08:24:52  ->  04/10/2026 16:05:37
+  o03220rr0301800050276-log.jez                      5,528 linhas  25/09/2026 09:32:14  ->  04/10/2026 16:03:11
+  o03220rr0301800050738-log.jez                      5,335 linhas  25/09/2026 09:27:00  ->  04/10/2026 16:09:23
+  o03220rr0302600060003-log.jez                      5,736 linhas  23/09/2026 08:22:27  ->  04/10/2026 16:05:18

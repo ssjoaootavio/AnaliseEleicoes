@@ -1,0 +1,46 @@
+{
+  "versao_script": "2.2",
+  "executado_em": "2026-10-26T11:53:33",
+  "python": "3.12.4",
+  "pandas": "2.3.0",
+  "parametros": {
+    "votacao": "votacao_secao_2026_BR.csv",
+    "detalhe": "detalhe_votacao_secao_2026\\detalhe_votacao_secao_2026_BR.csv",
+    "saida": "saida_v2",
+    "excluir_candidatos": [
+      28
+    ],
+    "margem_curta_pp": 10.0,
+    "min_duelo": 100,
+    "sem_hash": false,
+    "secoes": false,
+    "secao_candidato": false,
+    "nrows": null,
+    "encoding": "latin1"
+  },
+  "fontes": {
+    "votacao_secao": {
+      "arquivo": "votacao_secao_2026_BR.csv",
+      "tamanho_bytes": 1052510851,
+      "DT_GERACAO": "06/10/2026",
+      "HH_GERACAO": "14:03:43",
+      "sha256": "7bb56772992f6a448494331e6a1191a2f3cbd4dd1ed25efe4e84c998af265a3c"
+    },
+    "detalhe_votacao_secao": {
+      "arquivo": "detalhe_votacao_secao_2026_BR.csv",
+      "tamanho_bytes": 175982344,
+      "DT_GERACAO": "05/10/2026",
+      "HH_GERACAO": "14:03:30",
+      "sha256": "6294ff8ecee0471d5a480c23b5a32dab231ec185c2e2d9d24d0d6a3020b7d2b8"
+    }
+  },
+  "turnos_votacao": [
+    1
+  ],
+  "turnos_detalhe": [
+    1
+  ],
+  "secoes_por_turno": {
+    "1": 499248
+  }
+}

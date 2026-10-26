@@ -1,0 +1,17 @@
+{
+  "coletor": "1.1",
+  "executado_em": "2026-10-26T12:13:04",
+  "base": "https://resultados.tse.jus.br/oficial",
+  "pleitos": {
+    "1": 6257,
+    "2": 6258
+  },
+  "arquivos_ok": 11572,
+  "arquivos_erro": 0,
+  "problemas_de_validacao": 0,
+  "geracao_por_turno": {
+    "1": "05/10/2026 12:51:47",
+    "2": "25/10/2026 23:27:02"
+  },
+  "assinatura_verificada": false
+}

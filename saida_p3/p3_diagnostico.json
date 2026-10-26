@@ -1,0 +1,20 @@
+{
+  "versao": "0.2",
+  "entrada": "saida_json\\json_p2_municipios_por_turno.csv",
+  "sha256_entrada": "9a4553e4bf26ca438beda41bd45d98c246bf6aa4d328b92372cb83cb67348257",
+  "parametros": {
+    "reps": 300,
+    "semente": 20261025,
+    "limite_robusta_pp": 10.0,
+    "limite_moderada_pp": 25.0
+  },
+  "R2_ponderado_5_origens_brasil": 0.9788,
+  "especificacoes_sem_convergencia": [],
+  "aviso_entrada": null,
+  "natureza": "ESTIMATIVA (inferencia ecologica). Colunas LIMITE_*_FATO sao aritmeticas, sem modelo.",
+  "ambiente": {
+    "python": "3.12.4",
+    "numpy": "2.2.6",
+    "pandas": "2.3.0"
+  }
+}
