@@ -146,7 +146,7 @@ canvas{max-width:100%;display:block;border-bottom:1px solid var(--line);border-l
 </header>
 
 <nav class="tabs" aria-label="Seções"><div class="in" id="nav">
-  <a href="#brasil">Brasil</a><a href="#uf">UFs</a><a href="#municipios">Municípios</a><a href="#migracao">Migração</a><a href="#horario">Horário</a><a href="#fontes">Fontes e limites</a></div></nav>
+  <a href="#brasil">Brasil</a><a href="#uf">UFs</a><a href="#municipios">Municípios</a><a href="#migracao">Migração</a><a href="#horario">Horário</a><a href="#fontes">Fontes e limites</a><a href="stories/" style="margin-left:auto">Stories →</a></div></nav>
 
 <!-- ================= P1 BRASIL ================= -->
 <section id="brasil">
@@ -611,7 +611,7 @@ drawMatrix();drawAll();
 let rt;new ResizeObserver(()=>{clearTimeout(rt);rt=setTimeout(drawAll,120);}).observe(document.querySelector('.wrap'));
 matchMedia('(prefers-color-scheme:dark)').addEventListener('change',()=>setTimeout(drawAll,50));
 new MutationObserver(()=>setTimeout(drawAll,50)).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
-const links=[...document.querySelectorAll('#nav a')];const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+const links=[...document.querySelectorAll('#nav a[href^="#"]')];const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id));}});},{rootMargin:'-20% 0px -70% 0px'});
 secs.forEach(s=>s&&io.observe(s));
 })();
