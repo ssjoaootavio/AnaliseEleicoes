@@ -26,12 +26,53 @@ body{display:flex;flex-direction:column;align-items:center;justify-content:cente
 .mid{display:flex;align-items:center;gap:10px}
 .ctrl button,.ctrl a{white-space:nowrap}
 @media (max-width:420px){.ctrl button,.ctrl a{padding:9px 12px;font-size:14px}.mid{gap:6px}}
+/* Caixa de opinião, dúvida e insight: só no último story */
+.cta{position:absolute;left:7.8%;right:7.8%;top:56%;z-index:3;display:none;border:1px solid #3a4148;border-radius:12px;
+  background:#161a1d;padding:4% 5%;text-align:left}
+.cta.on{display:block}
+.cta p{font-size:clamp(13px,2.4cqh,17px);line-height:1.35;color:#d6dbe0;margin-bottom:10px}
+.btn{appearance:none;border:0;border-radius:999px;background:#eceff1;color:#0f1214;font:600 15px var(--font);padding:10px 18px;cursor:pointer}
+.btn:disabled{opacity:.5;cursor:default}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.stage{container-type:size}
+.sheet{position:absolute;inset:0;z-index:5;background:rgba(15,18,20,.97);display:none;flex-direction:column;gap:12px;padding:14% 7% 7%}
+.sheet.on{display:flex}
+.sheet h2{font-size:clamp(18px,3.4cqh,26px);line-height:1.2}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips button{appearance:none;border:1px solid var(--line);background:transparent;color:var(--ink);font:500 14px var(--font);
+  padding:8px 14px;border-radius:999px;cursor:pointer}
+.chips button[aria-pressed="true"]{background:#eceff1;color:#0f1214;border-color:#eceff1}
+.sheet textarea{flex:1;min-height:90px;resize:none;background:#161a1d;color:var(--ink);border:1px solid var(--line);border-radius:10px;
+  padding:12px;font:16px/1.4 var(--font)}
+.sheet textarea:focus,.chips button:focus-visible,.btn:focus-visible{outline:2px solid #5b9ff0;outline-offset:2px}
+.note{font-size:12.5px;color:var(--muted);line-height:1.4}
+.acts{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.msg{font-size:14px;min-height:1.4em}
+.msg.ok{color:#7fd17f}.msg.err{color:#f0a08a}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 </style></head>
 <body>
 <div class="stage" id="stage" aria-roledescription="carrossel" aria-label="Stories Eleições 2026">
   <div class="bars" id="bars"></div>
   <div class="tap prev" id="tapPrev" aria-hidden="true"></div>
   <div class="tap next" id="tapNext" aria-hidden="true"></div>
+  <div class="cta" id="cta">
+    <p>Ficou com uma <b>dúvida</b>, quer dar sua <b>opinião</b> ou tem um <b>insight</b> para explorar nos dados?</p>
+    <button class="btn" id="abrir" type="button">Escrever</button>
+  </div>
+  <form class="sheet" id="sheet" aria-label="Enviar opinião, dúvida ou insight">
+    <h2>O que você quer mandar?</h2>
+    <div class="chips" role="group" aria-label="Tipo">
+      <button type="button" data-tipo="Opinião" aria-pressed="false">Opinião</button>
+      <button type="button" data-tipo="Dúvida" aria-pressed="false">Dúvida</button>
+      <button type="button" data-tipo="Insight" aria-pressed="false">Insight</button>
+    </div>
+    <textarea id="texto" maxlength="2000" placeholder="Escreva aqui…" aria-label="Texto"></textarea>
+    <input class="hp" name="site" id="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="note">Envio anônimo. Não escreva nome, telefone ou outros dados pessoais. O texto pode ser usado para orientar as próximas análises.</p>
+    <div class="msg" id="msg" aria-live="polite"></div>
+    <div class="acts"><button class="btn ghost" type="button" id="fechar">Voltar</button><button class="btn" type="submit" id="enviar">Enviar</button></div>
+  </form>
 </div>
 <nav class="ctrl" aria-label="Navegação">
   <button id="prev" aria-label="Anterior">← Anterior</button>
@@ -39,6 +80,8 @@ body{display:flex;flex-direction:column;align-items:center;justify-content:cente
   <button id="next" aria-label="Próximo">Próximo →</button>
 </nav>
 <script>
+// URL do Apps Script publicado como app da Web (feedback/Code.gs). Vazio = caixa escondida.
+const ENDPOINT='https://script.google.com/macros/s/AKfycbxHQRrBVXvzezcn7vhcymyYQj8m3OegJ5sDlORYVZ-sFxEG5ld7KwHUP7piU7RQpGE0/exec';
 (function(){
   const N=6, stage=document.getElementById('stage'), bars=document.getElementById('bars');
   const alts=['O placar mudou de lado','Os dois cresceram','De onde vieram os votos a mais','A mudança aconteceu no país inteiro','O que o modelo de migração consegue estimar','O que os dados não dizem'];
@@ -58,13 +101,42 @@ body{display:flex;flex-direction:column;align-items:center;justify-content:cente
     document.getElementById('next').disabled=cur===N-1;
     const dl=document.getElementById('dl'); dl.href=imgs[cur].src; dl.setAttribute('download','story_'+(cur+1)+'.png');
     if(location.hash!=='#'+(cur+1)) history.replaceState(null,'','#'+(cur+1));
+    cta.classList.toggle('on',!!ENDPOINT&&cur===N-1);
+    if(cur!==N-1) fecharSheet();
   }
+  // ---- caixa de opinião, dúvida e insight ----
+  const cta=document.getElementById('cta'), sheet=document.getElementById('sheet'), texto=document.getElementById('texto');
+  const msg=document.getElementById('msg'), enviar=document.getElementById('enviar'), chips=[...sheet.querySelectorAll('[data-tipo]')];
+  let tipo='';
+  const emForm=t=>sheet.contains(t)||cta.contains(t);
+  function abrirSheet(){sheet.classList.add('on');msg.textContent='';msg.className='msg';texto.focus()}
+  function fecharSheet(){sheet.classList.remove('on')}
+  document.getElementById('abrir').onclick=abrirSheet;
+  document.getElementById('fechar').onclick=fecharSheet;
+  chips.forEach(c=>c.onclick=()=>{tipo=c.dataset.tipo;chips.forEach(o=>o.setAttribute('aria-pressed',o===c))});
+  ['touchstart','touchend'].forEach(ev=>[sheet,cta].forEach(el=>el.addEventListener(ev,e=>e.stopPropagation(),{passive:true})));
+  sheet.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const t=texto.value.trim();
+    if(!tipo){msg.className='msg err';msg.textContent='Escolha opinião, dúvida ou insight.';return}
+    if(!t){msg.className='msg err';msg.textContent='Escreva alguma coisa antes de enviar.';texto.focus();return}
+    enviar.disabled=true; msg.className='msg'; msg.textContent='Enviando…';
+    try{
+      // no-cors: o Apps Script não devolve CORS; a resposta é opaca, então só detectamos falha de rede.
+      await fetch(ENDPOINT,{method:'POST',mode:'no-cors',body:new URLSearchParams({tipo,texto:t,story:String(cur+1),pagina:location.href,site:document.getElementById('site').value})});
+      msg.className='msg ok'; msg.textContent='Recebido. Obrigado!';
+      texto.value=''; tipo=''; chips.forEach(o=>o.setAttribute('aria-pressed','false'));
+    }catch(err){
+      msg.className='msg err'; msg.textContent='Não foi possível enviar. Tente de novo.';
+    }finally{enviar.disabled=false}
+  });
   const go=d=>show(cur+d);
   document.getElementById('prev').onclick=()=>go(-1);
   document.getElementById('next').onclick=()=>go(1);
   document.getElementById('tapPrev').onclick=()=>go(-1);
   document.getElementById('tapNext').onclick=()=>go(1);
   document.addEventListener('keydown',e=>{
+    if(emForm(e.target)){if(e.key==='Escape')fecharSheet();return}
     if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();go(1)}
     else if(e.key==='ArrowLeft'){go(-1)}
     else if(e.key==='Home'){show(0)} else if(e.key==='End'){show(N-1)}
